@@ -1,0 +1,616 @@
+# TECHNICAL DOCUMENTATION
+## Web App Pengenalan Peralatan Listrik
+### Linux Desktop-Inspired Educational Web Application
+
+**Document Type:** Project Technical Specification  
+**Project Category:** Educational Web Application  
+**Version:** 1.0  
+**Status:** Initial Project Specification
+
+---
+
+# 1. PROJECT INTRODUCTION
+
+## 1.1 Project Background
+
+Web App Pengenalan Peralatan Listrik merupakan media pembelajaran digital untuk mata pelajaran Perbaikan Peralatan Listrik.
+
+Aplikasi dirancang untuk membantu peserta didik memperoleh informasi mengenai berbagai peralatan listrik melalui media digital yang mudah diakses, memiliki visual menarik, serta menyajikan informasi secara terstruktur.
+
+Website akan digunakan sebagai sarana pengenalan peralatan listrik dalam kegiatan pembelajaran.
+
+## 1.2 Project Objectives
+
+1. Menyediakan media pengenalan peralatan listrik berbasis web.
+2. Membantu peserta didik mengenali bentuk dan nama peralatan listrik.
+3. Menyajikan informasi mengenai fungsi, komponen, karakteristik, dan prinsip kerja peralatan.
+4. Meningkatkan kemudahan akses terhadap materi pembelajaran.
+5. Menghadirkan pengalaman belajar digital yang intuitif dan menarik.
+
+## 1.3 Core Problem
+
+Materi pengenalan peralatan listrik membutuhkan visualisasi dan informasi yang jelas agar peserta didik dapat menghubungkan nama, bentuk fisik, fungsi, dan karakteristik setiap peralatan.
+
+Media digital ini ditujukan untuk membantu proses tersebut melalui katalog dan halaman informasi yang terorganisasi.
+
+---
+
+# 2. PRODUCT IDENTITY
+
+## 2.1 Design Direction
+
+Linux Desktop Inspired — Clean, Minimalist, Premium, and Elegant.
+
+Inspirasi visual:
+- GNOME Desktop Environment.
+- KDE Plasma.
+- elementary OS.
+
+Prinsip:
+- Minimalism.
+- Clarity.
+- Consistency.
+- Functionality.
+- Accessibility.
+- Visual hierarchy.
+- Subtle interactions.
+
+Website bukan replika desktop Linux. Identitas Linux digunakan sebagai inspirasi estetika dan pengalaman antarmuka.
+
+## 2.2 Visual Identity
+
+### Color Direction
+
+Palet warna awal:
+
+- Primary: Electric Blue.
+- Background: Off-white.
+- Surface: White.
+- Text Primary: Dark Neutral.
+- Text Secondary: Muted Gray.
+- Border: Light Gray.
+- Accent: Soft Blue.
+
+Warna final ditentukan saat pembuatan design system.
+
+### Typography
+
+Font utama: Inter.
+
+Gunakan:
+- Heading yang tegas.
+- Body text yang mudah dibaca.
+- Konsistensi ukuran font.
+- Line-height yang nyaman.
+- Hierarki tipografi yang jelas.
+
+### UI Components
+
+- Sidebar.
+- Header.
+- Navigation item.
+- Search input.
+- Equipment card.
+- Category card jika diperlukan.
+- Detail information section.
+- Image viewer.
+- Breadcrumb.
+- Button.
+- Mobile drawer.
+- Bottom navigation jika diperlukan.
+
+---
+
+# 3. APPLICATION SCOPE
+
+## 3.1 Included Features
+
+### A. Home Page
+
+Berfungsi sebagai halaman awal aplikasi.
+
+Konten:
+- Identitas aplikasi.
+- Judul dan pengantar pembelajaran.
+- Deskripsi singkat.
+- Navigasi menuju katalog.
+- Ringkasan kategori atau koleksi peralatan jika diperlukan.
+
+### B. Equipment Catalog
+
+Berfungsi menampilkan daftar peralatan listrik.
+
+Konten:
+- Nama peralatan.
+- Gambar.
+- Deskripsi singkat.
+- Kategori jika diperlukan.
+- Pencarian.
+- Filter kategori apabila jumlah peralatan sudah cukup untuk membutuhkannya.
+
+### C. Equipment Detail
+
+Berfungsi menampilkan informasi peralatan secara lebih lengkap.
+
+Struktur informasi:
+
+1. Nama peralatan.
+2. Gambar utama.
+3. Pengertian.
+4. Fungsi.
+5. Bagian atau komponen.
+6. Prinsip kerja.
+7. Karakteristik.
+8. Informasi tambahan jika relevan.
+
+Materi final menyesuaikan karakteristik setiap peralatan.
+
+## 3.2 Excluded Features
+
+Fitur berikut tidak termasuk dalam ruang lingkup proyek:
+
+- Authentication.
+- Login dan registrasi.
+- User account.
+- Database backend.
+- Admin dashboard.
+- Quiz.
+- Assessment.
+- Scoring system.
+- Simulation.
+- Learning management system.
+- Payment system.
+
+Jangan menambahkan fitur tersebut tanpa keputusan baru dari pemilik proyek.
+
+---
+
+# 4. USER FLOW
+
+Alur utama:
+
+Home Page → Equipment Catalog → Select Equipment → Equipment Detail → Back to Catalog.
+
+Setiap halaman harus memiliki navigasi yang jelas.
+
+Pengguna tidak boleh mengalami dead end ketika menjelajahi konten.
+
+---
+
+# 5. RESPONSIVE DESIGN SPECIFICATION
+
+Pendekatan utama: Mobile-First Responsive Design.
+
+Responsive behavior harus dirancang berdasarkan kebutuhan perangkat, bukan sekadar scaling ukuran.
+
+## 5.1 Desktop
+
+Target awal: 1024px ke atas.
+
+Karakteristik:
+- Sidebar navigation.
+- Main content.
+- Header.
+- Grid katalog.
+- Search interface.
+- Hover interactions.
+- Ruang konten yang luas.
+
+## 5.2 Tablet
+
+Target awal: 768px–1023px.
+
+Karakteristik:
+- Sidebar collapsed atau drawer.
+- Grid menyesuaikan lebar.
+- Spacing adaptif.
+- Typography menyesuaikan.
+- Navigasi tetap mudah diakses.
+
+## 5.3 Mobile
+
+Target awal: di bawah 768px.
+
+Karakteristik:
+- Single-column atau two-column layout sesuai ruang.
+- Bottom navigation atau navigation drawer.
+- Touch-friendly controls.
+- Vertical information layout.
+- Tidak ada horizontal overflow.
+- Informasi tetap mudah dibaca.
+- Navigasi mudah dijangkau ibu jari.
+
+## 5.4 Responsive Principles
+
+1. Gunakan CSS Grid dan Flexbox.
+2. Gunakan responsive breakpoints.
+3. Gunakan fluid typography bila diperlukan.
+4. Hindari fixed-width layout.
+5. Gunakan max-width untuk konten.
+6. Pastikan gambar menyesuaikan container.
+7. Pastikan seluruh elemen dapat digunakan melalui touchscreen.
+8. Uji pada ukuran layar kecil, bukan hanya perangkat flagship.
+
+Breakpoint awal dapat menggunakan:
+- 640px.
+- 768px.
+- 1024px.
+- 1280px.
+
+Breakpoint dapat disesuaikan berdasarkan kebutuhan komponen.
+
+---
+
+# 6. ANIMATION & MOTION DESIGN
+
+Animasi mengadopsi karakter desktop Linux modern.
+
+## 6.1 Animation Types
+
+- Page transitions.
+- Fade-in.
+- Slide transitions.
+- Sidebar expansion.
+- Drawer transitions.
+- Card hover.
+- Button feedback.
+- Modal transitions.
+- Skeleton loading.
+
+## 6.2 Motion Principles
+
+- Smooth.
+- Natural.
+- Subtle.
+- Purposeful.
+- Non-disruptive.
+
+## 6.3 Timing Guidelines
+
+- Micro-interactions: 150–250ms.
+- Component transitions: 200–350ms.
+- Larger transitions: 300–450ms.
+
+Gunakan easing yang natural dan hindari animasi berlebihan.
+
+Implementasikan prefers-reduced-motion.
+
+Animation tidak boleh menghambat aksesibilitas atau performa.
+
+---
+
+# 7. TECHNOLOGY STACK
+
+| Technology | Responsibility |
+|---|---|
+| React | Frontend framework |
+| TypeScript | Type safety |
+| Vite | Build tool |
+| Tailwind CSS | Styling |
+| shadcn/ui | UI components |
+| Lucide React | Icons |
+| Framer Motion | Animations |
+| React Router | Routing |
+| GitHub | Version control |
+| GitHub Pages | Hosting |
+
+Gunakan versi dependencies yang kompatibel. Jangan mencampur konfigurasi Tailwind versi lama dan baru tanpa penyesuaian.
+
+## 7.1 Architecture
+
+Gunakan client-side static application.
+
+Tidak diperlukan backend untuk kebutuhan inti proyek.
+
+Konten peralatan disimpan sebagai data lokal terstruktur.
+
+---
+
+# 8. PROJECT STRUCTURE
+
+Struktur direktori yang direkomendasikan:
+
+src/
+  assets/
+    images/
+    icons/
+
+  components/
+    ui/
+    layout/
+    navigation/
+    equipment/
+
+  pages/
+    Home/
+    Catalog/
+    EquipmentDetail/
+
+  data/
+    equipment.ts
+    categories.ts
+
+  hooks/
+
+  animations/
+
+  styles/
+
+  lib/
+
+  types/
+
+  App.tsx
+  main.tsx
+
+public/
+  images/
+  favicon/
+
+Setiap folder memiliki tanggung jawab yang jelas.
+
+Struktur dapat berkembang sesuai kebutuhan, tetapi prinsip modularitas wajib dipertahankan.
+
+---
+
+# 9. DATA ARCHITECTURE
+
+Informasi peralatan harus dipisahkan dari komponen presentasi.
+
+Gunakan struktur data TypeScript.
+
+Contoh konseptual:
+
+interface Equipment {
+  id: string;
+  name: string;
+  category: string;
+  image: string;
+  shortDescription: string;
+  definition: string;
+  functions: string[];
+  components: {
+    name: string;
+    description: string;
+    image?: string;
+  }[];
+  workingPrinciple: string;
+  characteristics: string[];
+  additionalInformation?: string;
+}
+
+Data final harus disesuaikan dengan kebutuhan materi.
+
+Ketentuan:
+- Setiap peralatan memiliki ID unik.
+- Gunakan nama file gambar yang konsisten.
+- Informasi harus dapat diverifikasi.
+- Jangan mengisi informasi teknis berdasarkan asumsi.
+- Komponen yang tidak relevan boleh dikosongkan atau disesuaikan.
+- Hindari memaksakan format informasi yang sama apabila karakteristik peralatan berbeda.
+
+---
+
+# 10. ROUTING STRATEGY
+
+Gunakan React Router.
+
+Rute konseptual:
+
+/                  → Home
+/catalog           → Equipment Catalog
+/equipment/:id     → Equipment Detail
+
+Pastikan URL dapat digunakan untuk navigasi langsung.
+
+## GitHub Pages Considerations
+
+Karena aplikasi menggunakan GitHub Pages:
+
+- Atur base path Vite sesuai nama repository.
+- Pastikan asset paths benar.
+- Perhatikan konfigurasi React Router.
+- Gunakan strategi routing yang kompatibel dengan static hosting.
+- Pastikan refresh pada halaman detail tidak menghasilkan 404.
+- Uji URL deployment secara langsung.
+
+Hash-based routing dapat digunakan jika dibutuhkan untuk menghindari masalah fallback pada GitHub Pages.
+
+---
+
+# 11. PERFORMANCE REQUIREMENTS
+
+Prioritas:
+- Optimasi ukuran gambar.
+- Lazy loading.
+- Responsive image handling.
+- Code splitting jika diperlukan.
+- Hindari dependencies berlebihan.
+- Hindari unnecessary re-render.
+- Hindari layout shift.
+- Minimalkan blocking resources.
+- Pastikan build production optimal.
+
+Target pengalaman:
+- Navigasi terasa responsif.
+- Konten dapat diakses dengan cepat.
+- Animasi tidak menyebabkan lag.
+- Website tetap ringan pada perangkat dengan spesifikasi terbatas.
+
+---
+
+# 12. ACCESSIBILITY
+
+Wajib memperhatikan:
+
+- Semantic HTML.
+- Keyboard navigation.
+- Accessible labels.
+- Image alt text.
+- Color contrast.
+- Focus indicators.
+- Touch target.
+- Reduced motion support.
+- Informasi tidak hanya disampaikan melalui warna.
+
+---
+
+# 13. LANGUAGE POLICY
+
+Seluruh antarmuka aplikasi menggunakan Bahasa Indonesia.
+
+Termasuk:
+- Navigation.
+- Page titles.
+- Buttons.
+- Labels.
+- Descriptions.
+- Placeholder.
+- System messages.
+- Error states.
+- Empty states.
+- Learning content.
+
+Nama teknologi dan istilah teknis yang lebih tepat dalam bahasa Inggris dapat dipertahankan.
+
+---
+
+# 14. TESTING & QUALITY ASSURANCE
+
+Lakukan pengujian terhadap:
+
+## Functional Testing
+- Semua navigasi berfungsi.
+- Katalog dapat dibuka.
+- Detail peralatan sesuai ID.
+- Search berfungsi jika diimplementasikan.
+- Tombol kembali berfungsi.
+- Tidak ada dead links.
+
+## Responsive Testing
+- Smartphone kecil.
+- Smartphone besar.
+- Tablet portrait.
+- Tablet landscape.
+- Laptop.
+- Desktop.
+
+## Technical Testing
+- Tidak ada TypeScript errors.
+- Tidak ada build errors.
+- Tidak ada broken imports.
+- Tidak ada console errors.
+- Tidak ada broken images.
+- Tidak ada horizontal overflow.
+- Routing bekerja pada deployment.
+
+## Visual Testing
+- Konsistensi spacing.
+- Konsistensi typography.
+- Konsistensi warna.
+- Konsistensi komponen.
+- Keterbacaan konten.
+- Kualitas animasi.
+
+---
+
+# 15. DEVELOPMENT ROADMAP
+
+Phase 1 — Project Planning
+- Finalisasi kebutuhan.
+- Finalisasi daftar peralatan.
+- Finalisasi struktur informasi.
+
+Phase 2 — Design System
+- Color palette.
+- Typography.
+- Spacing.
+- Components.
+- Responsive behavior.
+- Motion system.
+
+Phase 3 — Project Setup
+- Setup React.
+- Setup TypeScript.
+- Setup Vite.
+- Setup Tailwind CSS.
+- Setup dependencies.
+- Setup folder structure.
+
+Phase 4 — Core Development
+- Home page.
+- Navigation.
+- Catalog page.
+- Detail page.
+- Data integration.
+
+Phase 5 — UI/UX Refinement
+- Responsive adjustments.
+- Animation.
+- Interaction.
+- Accessibility.
+- Visual consistency.
+
+Phase 6 — Testing & Debugging
+- Functional testing.
+- Responsive testing.
+- Technical testing.
+- Performance checks.
+- Bug fixing.
+
+Phase 7 — Deployment
+- Production build.
+- GitHub repository.
+- GitHub Pages configuration.
+- Deployment verification.
+
+---
+
+# 16. DEVELOPMENT PRINCIPLES
+
+1. Modular architecture.
+2. Reusable components.
+3. Separation of concerns.
+4. Mobile-first approach.
+5. Consistent design system.
+6. Performance-oriented development.
+7. Accessible interface.
+8. Maintainable code.
+9. Accurate educational content.
+10. No unnecessary features.
+
+Setiap perubahan harus mempertimbangkan dampaknya terhadap komponen lain.
+
+Jangan melakukan refactoring besar tanpa memahami struktur yang sudah ada.
+
+---
+
+# 17. PROJECT SUCCESS CRITERIA
+
+Proyek dianggap selesai apabila:
+
+- Seluruh halaman inti tersedia.
+- Katalog dan detail dapat digunakan.
+- Materi tersaji dengan benar.
+- Website responsif.
+- Desain konsisten dengan identitas Linux-inspired.
+- Animasi berjalan lancar.
+- Tidak ada error kritis.
+- Tidak ada broken links atau images.
+- Production build berhasil.
+- Website dapat diakses melalui GitHub Pages.
+
+---
+
+# 18. DOCUMENT MAINTENANCE
+
+Dokumen ini menjadi acuan utama pengembangan proyek.
+
+Jika terdapat perubahan keputusan:
+- Perbarui dokumentasi.
+- Catat alasan perubahan.
+- Pastikan implementasi mengikuti spesifikasi terbaru.
+- Hindari perbedaan antara dokumentasi dan kode.
+
+Status dokumen:
+Initial Specification — Version 1.0.

@@ -1,0 +1,6 @@
+{
+  "name": "Peralatan Listrik — Media Pembelajaran Digital",
+  "description": "Aplikasi web edukatif pengenalan peralatan listrik untuk mata pelajaran Perbaikan Peralatan Listrik dengan desain bersih bergaya Linux desktop.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
